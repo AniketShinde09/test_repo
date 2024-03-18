@@ -8,7 +8,7 @@ const router = express.Router();
 const dbPath = path.join(__dirname, "../my_database.db"); // Path to your SQLite database file
 //const db = new sqlite3.Database(dbPath);
 
-const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error(err.message);
   }
