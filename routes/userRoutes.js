@@ -6,14 +6,7 @@ const router = express.Router();
 
 // Connect to SQLite database
 const dbPath = path.join(__dirname, "../my_database.db"); // Path to your SQLite database file
-//const db = new sqlite3.Database(dbPath);
-
-const db = new sqlite3.Database(dbPath, (err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the chinook database.');
-})
+const db = new sqlite3.Database(dbPath);
 
 router.post("/findorcreateuser", (req, res) => {
   const { username } = req.body;
